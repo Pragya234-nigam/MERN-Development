@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Admission Form</title>
+</head>
+
+<body>
+
+    <h2>Student Admission Form</h2>
+
+    <form>
+
+        <label>Student Name</label>
+        <input type="text" placeholder="Enter Student Name" required minlength="3">
+
+        <br><br>
+        <label>Student Email</label>
+        <input type="email" placeholder="Enter Student Email">
+
+        <br><br>
+
+        <label>DOB</label>
+        <input type="date">
+
+        <br><br>
+
+        <label>Gender</label>
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female
+
+        <br><br>
+
+        <label>Select Course</label>
+        <select>
+            <option>MERN Stack Development</option>
+            <option>Major Project Training</option>
+            <option>Search Engine Optimization</option>
+            <option>Cloud Computing</option>
+            <option>Data Analytics</option>
+        </select>
+
+        <br><br>
+
+        <label>Select College</label>
+        <input type="text" list="college" >
+
+        <datalist id="college" >
+            <option>DSMNRU</option>
+            <option>LPCPS</option>
+            <option>IICS</option>
+            <option>BBDU</option>
+            <option>SRMU</option>
+        </datalist>
+
+        <br><br>
+
+        <label for="image">Upload Image</label>
+        <input hidden id="image" type="file">
+        
+        <br><br>
+        
+        <input type="checkbox">
+        <label>I accept Terms & Conditions</label>
+        
+        <br>
+
+        <input type="checkbox">
+        <label>Subscribe me for newsletter</label>
+
+        <br><br>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+</body>
+
+</html>

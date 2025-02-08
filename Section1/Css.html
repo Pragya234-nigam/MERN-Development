@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+*{
+    font-family:Roboto;
+    font-size: 20px;
+    margin-bottom:10px;
+}
+body{
+    /* background-color:crimson; */
+    /* background-image:linear-gradient(0deg ,rgb(33, 129, 33),rgb(52, 52, 143));  */
+   /* background-image:url('download.jpg'); */
+     background-image:linear-gradient(rgba(255, 0, 0, 0.068),rgba(0, 0, 255, 0.096),rgba(255, 255, 0, 0.068)),
+   url('download.jpg');
+}
+.a{
+border:2px solid red;
+width:70%;
+margin:auto;
+background-color:rgb(105, 91, 91);
+}
+ .text-input{
+    display:block;
+    box-sizing:border-box;
+    margin-bottom:30px;
+ }
+ .btn{
+    display:block;
+    width: 100%;
+    background-color:brown;
+    color:white;
+    padding:10px;
+    border-radius:5px;
+    border:none;
+    transition-duration:0.3s;;
+ }
+ .btn:hover{
+background-color:rgb(24, 206, 130);   
+transform:translateY(-5px); 
+box-shadow:1px 1px 4px 1px black;/*CSS shadow*/
+ }
+ .link{
+    display:block;
+    margin:20px 0px;
+    color:blanchedalmond;
+    font-weight:bold;
+    text-decoration:none;
+ }
+
+ .link:hover{
+    text-decoration:underline;
+ }
+ .registered-link{
+    text-align:center;
+    margin-bottom:0;
+ }
+   </style>
+</head>
+<body>
+    <div class="a">
+    <label>Enter Your Name</label>
+
+    <a href="#" class="link">Forget Password</a>
+    <input autofocus type="text" class="text-input">
+    <button class="btn">Submit</button>
+    <a href="#" class="link registered-link">Create a New Account</a>
+    </div>
+</body>
+</html>
