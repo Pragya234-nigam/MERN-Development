@@ -1,3 +1,4 @@
+
 const arr=[34,'hello',true,null];
 console.log(arr);
 console.log(Array.isArray(arr));
