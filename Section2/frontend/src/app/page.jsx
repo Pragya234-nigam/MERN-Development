@@ -1,4 +1,5 @@
 import Button from '@/components/Button';
+import Card from '@/components/Card';
 import React from 'react'
 
 const Home = () => {
@@ -13,6 +14,11 @@ const Home = () => {
       <img src="/next.svg" alt="" />
        <Button>login</Button>
        <Button disabled={true}>signup</Button>
+       <Card
+       title="my card title"
+       description="my description"
+       primaryText="OK"
+       secondaryText="Cancel"/>
     </div>
   )
 }
