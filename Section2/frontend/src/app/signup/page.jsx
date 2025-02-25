@@ -1,3 +1,6 @@
+'use client';
+
+//event and State
 import { useFormik } from 'formik';
 import React from 'react'
 
@@ -13,7 +16,6 @@ const signupForm=useFormik({
   onSubmit: (values) =>{
     console.log(values);
     //send values to backend
-
   }
 })
   return (
@@ -69,7 +71,7 @@ const signupForm=useFormik({
           Or
         </div>
         {/* Form */}
-        <form>
+        <form onSubmit={signupForm.handleSubmit}>
           <div className="grid gap-y-4">
             {/* Form Group */}
             <div>
