@@ -76,16 +76,17 @@ const signupForm=useFormik({
             {/* Form Group */}
             <div>
               <label
-                htmlFor="email"
+                htmlFor="name"
                 className="block text-sm mb-2 dark:text-white"
               >
-                Email address
+                Full Name
               </label>
               <div className="relative">
                 <input
-                  type="email"
-                  id="email"
-                  name="email"
+                  type="text"
+                  id="name"
+                  onChange={signupForm.handleChange}
+                  value={signupForm.values.name}
                   className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                   required=""
                   aria-describedby="email-error"
@@ -111,16 +112,17 @@ const signupForm=useFormik({
             {/* Form Group */}
             <div>
               <label
-                htmlFor="name"
+                htmlFor="email"
                 className="block text-sm mb-2 dark:text-white"
               >
-              Full Name
+              Email
               </label>
               <div className="relative">
                 <input
-                  type="email"
+                  type="text"
                   id="email"
-                  name="email"
+                  onChange={signupForm.handleChange}
+                  value={signupForm.values.email}
                   className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                   required=""
                   aria-describedby="email-error"
@@ -155,7 +157,8 @@ const signupForm=useFormik({
                 <input
                   type="password"
                   id="password"
-                  name="password"
+                  onChange={signupForm.handleChange}
+                  value={signupForm.values.password}
                   className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                   required=""
                   aria-describedby="password-error"
@@ -181,7 +184,7 @@ const signupForm=useFormik({
             {/* Form Group */}
             <div>
               <label
-                htmlFor="confirm-password"
+                htmlFor="confirmPassword"
                 className="block text-sm mb-2 dark:text-white"
               >
                 Confirm Password
@@ -189,8 +192,9 @@ const signupForm=useFormik({
               <div className="relative">
                 <input
                   type="password"
-                  id="confirm-password"
-                  name="confirm-password"
+                  id="confirmPassword"
+                  onChange={signupForm.handleChange}
+                  value={signupForm.values.confirmPassword}
                   className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                   required=""
                   aria-describedby="confirm-password-error"
