@@ -5,6 +5,7 @@ const app=express();
 const port=5000;
 //endpoint or route
 //middleware
+app.use(express.json());//readable
 app.use('/user',UserRouter);
 app.use('/product',ProductRouter);
 app.get('/',(req,res)=>{
