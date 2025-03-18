@@ -4,10 +4,10 @@ const { Schema, model } = require('../connection');
 
 const mySchema = new Schema({
     name: String,
-    quantity: String,
-    brand: String,
-    price: Number,
-    image: String,
+    quantity: {type: Number, default: 1},
+    brand: {type:String,default:'Unknown'},
+    price:{type:Number,required:true},
+    image: {type: String, default: 'unknnown.jpg'},
     createdAt: { type: Date, default: Date.now }
 });
 

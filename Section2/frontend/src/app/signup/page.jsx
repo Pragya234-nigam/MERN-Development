@@ -1,7 +1,9 @@
 'use client';
+import axios from 'axios';
 //event and State
 import { useFormik } from 'formik';
 import React from 'react'
+import toast from 'react-hot-toast';
 import * as Yup from 'yup';//import from site
 
 const SignupSchema = Yup.object().shape({
@@ -23,7 +25,7 @@ const SignupSchema = Yup.object().shape({
 
 
 });
-
+//wrapper , trigger in react-toast
 const Signup = () => {
 
   const signupForm = useFormik({
@@ -36,6 +38,14 @@ const Signup = () => {
     onSubmit: (values) => {
       console.log(values);
       //send values to backend
+
+      axios.post('http://localhost:5000/user/add',values)//Json direct//asynchronous no time to wait then catch error handling async
+     .then((result) => {
+       toast.success('User Registered Successfully');
+     }).catch((err) => {
+       console.log(err);
+        toast.error('User Registration Failed');
+     });
     },
     validationSchema: SignupSchema
   })
