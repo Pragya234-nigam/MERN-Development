@@ -1,12 +1,14 @@
 'use client';
 import axios from 'axios';
 import { Formik } from 'formik';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 
 const UpdateUser = () => {
   const { id } = useParams();
   const [userData, setUserData] = useState(null);
+
+  const router=useRouter
 
   const getUserData = async () => {
     const res = await axios.get('http://localhost:5000/user/getbyid/' + id);
@@ -19,6 +21,16 @@ const UpdateUser = () => {
 
   const handleFormSubmit = (values) => {
     console.log(values);
+
+    axios.put('http://localhost:5000/user/update/' + id, values)
+      .then((result) => {
+        toast.success('User updated successfully');
+        router.back();
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error('Error updating user');
+      });
   }
   if (userData === null) {
     return <h1>Loading.....</h1>
@@ -217,7 +229,7 @@ const UpdateUser = () => {
                   type="submit"
                   className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                 >
-                  Sign up
+                  Update
                 </button>
               </div>
             </form>
@@ -227,5 +239,4 @@ const UpdateUser = () => {
       </Formik></div>
   )
 }
-
 export default UpdateUser;
