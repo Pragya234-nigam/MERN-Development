@@ -38,6 +38,7 @@ const Signup = () => {
     onSubmit: (values) => {
       console.log(values);
       //send values to backend
+      //ctrl+space
 
       axios.post('http://localhost:5000/user/add',values)//Json direct//asynchronous no time to wait then catch error handling async
      .then((result) => {
